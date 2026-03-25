@@ -5,7 +5,7 @@ import PokemonDetails from './components/PokemonDetails';
 
 function App() {
 
-  const [pokemonSeleccionado, setPokemonSeleccionado] = useState({});
+  const [pokemonSeleccionado, setPokemonSeleccionado] = useState();
 
 
   return (

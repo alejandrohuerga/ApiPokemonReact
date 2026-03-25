@@ -14,7 +14,7 @@ import './PokemonCard.css';
 // Recibe datos desde el padre como un pokemon.
 function PokemonCard(props) {
 
-    const {pokemon} = props;
+    const {pokemon, selectedPokemon} = props;
 
   return (
     pokemon.id ? (
