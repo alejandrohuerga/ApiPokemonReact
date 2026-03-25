@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './PokemonCard.css';
 /**
  * Este componente es una carta con un solo pokemon.
  * Lo importaremos en el componente padre PokemonList.
@@ -10,19 +11,10 @@ import { useEffect, useState } from "react";
  * @since 25/03/2026 @lastUpdate 25/03/2026   
  */
 
-function PokemonCard() {
-  const [pokemon,setPokemon] = useState({});
+// Recibe datos desde el padre como un pokemon.
+function PokemonCard(props) {
 
-  
-
-  // Petición a la API
-  useEffect(()=>{
-    fetch("https://pokeapi.co/api/v2/pokemon/1")
-      .then((response) => response.json())
-      .then((data) =>
-          setPokemon(data))
-    },[])
-  
+    const {pokemon} = props;
 
   return (
     pokemon.id ? (
