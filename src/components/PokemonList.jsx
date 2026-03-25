@@ -17,13 +17,13 @@ import './PokemonCard.css';
  * en vez de hacerlo dentro del li que solo puede ser una.
  */
 
-function PokemonList() {
+function PokemonList(props) {
 
     const [pokemons , setPokemons] = useState([]);
 
     // Cuando cargue la página traeme 10 pokemons.
     useEffect(() =>{
-        getPokemons(30)
+        getPokemons(10)
     }, [])
 
     // Petición a la API 
@@ -51,7 +51,7 @@ function PokemonList() {
     } 
     // Recorre el array y lo convierte en: <PokemonCard pokemon={p1} />,
     const pokemonCards = pokemons.map((pokemon) =>{
-        return <PokemonCard key={pokemon.id} pokemon={pokemon}></PokemonCard>
+        return <PokemonCard key={pokemon.id} pokemon={pokemon} selectedPokemon={props.selectedPokemon}></PokemonCard>
     })
   return (
     <ul className="pokemon-list">

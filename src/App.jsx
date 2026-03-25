@@ -1,11 +1,24 @@
+import { useState } from 'react';
 import './App.css';
 import PokemonList from './components/PokemonList';
+import PokemonDetails from './components/PokemonDetails';
 
 function App() {
+
+  const [pokemonSeleccionado, setPokemonSeleccionado] = useState();
+
+
   return (
     <>
-        <h2>Pokemon API</h2>
-        <PokemonList/>
+        {
+          pokemonSeleccionado && (
+            <div>
+              <h2>Pokemon Seleccionado</h2>
+              <PokemonDetails pokemon={pokemonSeleccionado}/>
+            </div>
+          )
+        }
+        <PokemonList selectedPokemon={setPokemonSeleccionado}/>
     </>
   )
 }
