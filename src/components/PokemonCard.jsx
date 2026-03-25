@@ -18,7 +18,7 @@ function PokemonCard(props) {
 
   return (
     pokemon.id ? (
-    <li className="pokemon-card">
+    <li className="pokemon-card" onClick={() =>selectedPokemon(pokemon)}>
         <h2 className="pokemon-name">{pokemon.name}</h2>
         <img className="pokemon-image" src={pokemon.sprites.front_default} alt="imagen pokemon"/>
         <h3 className="text">HP: {pokemon.stats[0].base_stat}</h3>
