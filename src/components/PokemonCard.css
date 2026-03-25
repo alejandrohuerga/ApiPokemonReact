@@ -1,0 +1,35 @@
+/* Contenedor de la lista (opcional, para diseño) */
+ul {
+    list-style: none; /* Elimina viñetas */
+    padding: 0;
+    display: flex; /* Para poner cartas en fila */
+    flex-wrap: wrap; /* Ajuste automático de línea */
+    gap: 20px; /* Espacio entre cartas */
+}
+
+/* Estilo para cada elemento de lista (carta) */
+li {
+    background-color: white;
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra */
+    padding: 20px;
+    width: 300px; /* Tamaño definido */
+    height: 400px;
+    transition: transform 0.2s; /* Animación */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & img{
+        width: 300px;
+        height: 400px;
+    }
+}
+
+/* Efecto al pasar el mouse */
+li:hover {
+    transform: translateY(-5px); /* Eleva la carta */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
