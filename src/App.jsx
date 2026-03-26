@@ -12,7 +12,7 @@ function App() {
     <>
         {
           pokemonSeleccionado && (
-            <div>
+            <div className='pokemon-seleccionado'>
               <h2>Pokemon Seleccionado</h2>
               <PokemonDetails pokemon={pokemonSeleccionado}/>
             </div>

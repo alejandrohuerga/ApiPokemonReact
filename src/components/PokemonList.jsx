@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PokemonCard from "./PokemonCard";
 import './PokemonCard.css';
+import NumeroPokemonForm from "./NumeroPokemonForm";
 
 /**
  * Este componente devuelve una lista <ul>"> 
@@ -23,7 +24,7 @@ function PokemonList(props) {
 
     // Cuando cargue la página traeme 10 pokemons.
     useEffect(() =>{
-        getPokemons(10)
+        getPokemons(1,10)
     }, [])
 
     // Petición a la API 
@@ -39,10 +40,10 @@ function PokemonList(props) {
         return data;
     }
 
-    const getPokemons = async (quantity) =>{
+    const getPokemons = async (desde,hasta) =>{
         const pkmnArr = [];
 
-        for (let i = 1 ; i <= quantity ; i++){
+        for (let i = desde ; i <= hasta ; i++){
             const pokemon = await fetchPokemon(i);
             pkmnArr.push(pokemon);
         }
@@ -54,9 +55,12 @@ function PokemonList(props) {
         return <PokemonCard key={pokemon.id} pokemon={pokemon} selectedPokemon={props.selectedPokemon}></PokemonCard>
     })
   return (
-    <ul className="pokemon-list">
-        {pokemonCards}
-    </ul>
+    <>
+        <NumeroPokemonForm getPokemons={getPokemons}/>
+        <ul className="pokemon-list">
+            {pokemonCards}
+        </ul>
+    </>
   )
 }
 
