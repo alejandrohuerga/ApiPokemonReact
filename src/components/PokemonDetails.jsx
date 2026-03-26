@@ -1,3 +1,4 @@
+import './PokemonDetails.css';
 
 function PokemonDetails(props) {
 

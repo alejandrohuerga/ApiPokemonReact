@@ -1,0 +1,42 @@
+/* Contenedor principal del detalle del Pokémon */
+.selected-pokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: plum;
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    width: 350px; /* Tamaño ajustado */
+    height: auto;
+    transition: transform 0.2s; /* Animación */
+}
+
+.pokemon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.pokemon-img {
+    width: 200px; /* Tamaño ajustado */
+    height: 200px; /* Tamaño ajustado */
+    object-fit: contain; /* Ajuste de la imagen */
+    margin-top: 10px;
+}
+
+.text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Si deseas un comportamiento de hover como en las cartas */
+.selected-pokemon:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+}
